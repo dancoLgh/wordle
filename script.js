@@ -52,7 +52,8 @@ function intentar() {
   GRID.appendChild(ROW);
   intentos--;
   if (intentos == 0) {
-    terminar("<h1>PERDISTE!😖</h1>");
+    terminar(`<h1>PERDISTE!😖</h1>
+              <p>La palabra era ${palabra}</p>`);
   }
 }
 function terminar(mensaje) {
