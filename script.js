@@ -1,6 +1,5 @@
 //Cantidad de intentos
 let intentos = 6;
-const palabra = diccionario[Math.floor(Math.random() * diccionario.length)];
 //se define la api
 const API = "https://random-word-api.herokuapp.com/word?lang=es&length=5";
 fetch(API)
