@@ -1,6 +1,19 @@
-let diccionario = ["APPLE", "HURLS", "WINGS", "YOUTH"];
+//Cantidad de intentos
 let intentos = 6;
 const palabra = diccionario[Math.floor(Math.random() * diccionario.length)];
+//se define la api
+const API = "https://random-word-api.herokuapp.com/word?lang=es&length=5";
+fetch(API)
+  .then((response) => response.json())
+  //Se asigna la parabra y se convierte en MAYUSCULA
+  .then((response) => {
+    palabra = response[0].toUpperCase();
+  })
+  .catch((err) => {
+    console.log("La API no responde, se usa lista local");
+    let diccionario = ["APPLE", "HURLS", "WINGS", "YOUTH"];
+    let palabra = diccionario[Math.floor(Math.random() * diccionario.length)];
+  });
 
 const button = document.getElementById("guess-button");
 button.addEventListener("click", intentar);
